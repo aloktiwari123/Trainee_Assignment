@@ -12,19 +12,19 @@ public class CarAdmin {
 		System.out.println("Enter the Car Model");
 		String carName=sc.next();
 		item.setCarName(carName);
-		SelectCarType();
+		selectCarType();
 		System.out.println("Enter the Car cost price");
 		int carCp=sc.nextInt();
 		item.setCarcp(carCp);
-		SelectInsuranceType();
-		ShowResult();
+		selectInsuranceType();
+		showResult();
 		}catch(Exception e) {
 			System.out.println(e);
 			main(args);
 		}
 	
 	}
-	public static void SelectCarType()
+	public static void selectCarType()
 	{
 		
 		System.out.println("Enter 1 for Hatchback");
@@ -48,12 +48,12 @@ public class CarAdmin {
 		else
 		{
 			System.out.println("Select the correct Car type");
-			SelectCarType();
+			selectCarType();
 		}
 		
 		
 	}
-	public static void SelectInsuranceType()
+	public static void selectInsuranceType()
 	{
 		
 		System.out.println("Enter 1 for Basic");
@@ -73,11 +73,11 @@ public class CarAdmin {
 		else
 		{
 			System.out.println("Select the correct Insurance type");
-			SelectInsuranceType();
+			selectInsuranceType();
 		}
 		
 	}
-	public static void ShowResult()
+	public static void showResult()
 	{
 		System.out.println("Car Model : "+item.getCarName());
 		System.out.println("Car Price : "+item.getCarcp());
