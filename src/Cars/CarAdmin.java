@@ -8,8 +8,9 @@ public class CarAdmin {
 	public static Scanner sc=new Scanner(System.in);
 	public static void main(String args[])
 	{	
+		try {
 		System.out.println("Enter the Car Model");
-		String carName=sc.nextLine();
+		String carName=sc.next();
 		item.setCarName(carName);
 		SelectCarType();
 		System.out.println("Enter the Car cost price");
@@ -17,11 +18,15 @@ public class CarAdmin {
 		item.setCarcp(carCp);
 		SelectInsuranceType();
 		ShowResult();
+		}catch(Exception e) {
+			System.out.println(e);
+			main(args);
+		}
 	
 	}
 	public static void SelectCarType()
 	{
-		try {
+		
 		System.out.println("Enter 1 for Hatchback");
 		System.out.println("Enter 2 for Sedan");
 		System.out.println("Enter 3 for SUV");
@@ -45,17 +50,12 @@ public class CarAdmin {
 			System.out.println("Select the correct Car type");
 			SelectCarType();
 		}
-		}
-		catch(Exception e)
-		{
-			System.out.println(e.toString());
-			SelectCarType();
-		}
+		
 		
 	}
 	public static void SelectInsuranceType()
 	{
-		try {
+		
 		System.out.println("Enter 1 for Basic");
 		System.out.println("Enter 2 for Premium");
 		int insuranceType =sc.nextInt();
@@ -75,12 +75,7 @@ public class CarAdmin {
 			System.out.println("Select the correct Insurance type");
 			SelectInsuranceType();
 		}
-		}
-		catch(Exception e)
-		{
-			System.out.println(e.toString());
-			SelectInsuranceType();
-		}
+		
 	}
 	public static void ShowResult()
 	{
